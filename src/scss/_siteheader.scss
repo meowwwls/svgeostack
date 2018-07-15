@@ -2,13 +2,14 @@
   padding: $mb / 2;
   margin-bottom: $mb;
   background-color: $accent2-lt;
+  text-align: right;
 
   @media screen and (min-width: $bk) {
     margin-bottom: 0;
   }
 
   .h {
-    text-align: center;
+    display: inline-block;
 
     @media screen and (min-width: $bk) {
       margin: 0 0 0 auto;
