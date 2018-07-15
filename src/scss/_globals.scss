@@ -19,56 +19,27 @@
 
 :root {
   font-size: calc(1rem + 0.2vw);
+
+  @media screen and (min-width: 2000px) {
+    font-size: calc(1rem + 1vw);
+  }
 }
 
 html {
   height: 100%;
+  background-color: $accent2-lt;
+
+  @media screen and (min-width: $bk) {
+    padding: 0 3rem;
+  }
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   position: relative;
   min-height: 100%;
   margin: 0;
   background-color: $cement;
   font-family: 'Roboto Mono', monospace;
-
-  &::before {
-    @include pse($left: auto, $height: $bar-w);
-    right: 0;
-
-    background-color: $accent2-lt;
-    z-index: -1;
-
-    @media screen and (min-width: $bk) {
-      height: 100%;
-      width: $bar-w;
-    }
-  }
-}
-
-// HEADINGS
-
-.h {
-  margin-top: 0;
-  margin-bottom: $mb;
-  // padding-bottom: $ul-h / 2;
-  color: $accent;
-  position: relative;
-  max-width: max-content;
-  text-align: left;
-  font-family: 'Poppins', sans-serif;
-
-  &::before {
-    @include pse($width: 50%, $height: $ul-h, $top: auto);
-    bottom: -$ul-h;
-    background-color: $prim;
-  }
-
-  &.--l {
-    font-size: 1.6em;
-  }
-
-  &.--m {
-    font-size: 1.4em;
-  }
 }

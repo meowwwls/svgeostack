@@ -1,0 +1,22 @@
+.site-footer {
+  background-color: $accent2-lt;
+  padding: 1.5em;
+  text-align: center;
+}
+
+.site-footer__link {
+  padding: 0.15em 0.25em;
+  background-image: linear-gradient(35deg, lighten($prim, 30%), transparent);
+  color: #000;
+  text-decoration: none;
+  background-repeat: no-repeat;
+  transition: all 300ms ease-in-out;
+
+  &:hover {
+    background-color: $accent2;
+  }
+
+  &:focus {
+    box-shadow: inset 0 0 0 3px $accent2;
+  }
+}
