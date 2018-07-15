@@ -8,12 +8,17 @@ let color;
 
 // creates each "box" in the SVG
 const createGroup = (...args) => {
-  const [x1, x2, y1, y2, col, svg, svgNS, currentColor] = args;
+  const [x1, x2, y1, y2, col, svg, svgNS, currentColor, first] = args;
   color = currentColor;
   const g = document.createElementNS(svgNS, 'g');
   const random = Math.floor(Math.random() * 2);
   const rect = createBox(x1, x2, y1, y2, col, svgNS);
   let shape; // shape inside of box
+
+  // reset circle count
+  if (first) {
+    circles = 0;
+  }
 
   if (geos[random] === 'circle' && circles < cMax && col % 2 === 0) {
     circles++;

@@ -12,6 +12,7 @@ const w = columns * size;
 const h = rows * size;
 const colors = ['#f49fc4', '#39cbb3', '#f2694b', '#000400', '#1f3ee0'];
 let color;
+let circles = 0;
 
 const createSVG = () => {
   const color = colors[Math.floor(Math.random() * colors.length)];
@@ -22,6 +23,7 @@ const createSVG = () => {
   );
 
   let row = 0;
+  let first = true; // flag for the first time a box is generated
 
   vals.forEach((val, i) => {
     const coords = [];
@@ -48,7 +50,11 @@ const createSVG = () => {
     }
 
     if (val) {
-      createGroup(...coords, i, svg, svgNS, color);
+      createGroup(...coords, i, svg, svgNS, color, first);
+
+      if (first) {
+        first = false;
+      }
     }
   });
 
