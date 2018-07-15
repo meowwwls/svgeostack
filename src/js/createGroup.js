@@ -1,23 +1,15 @@
 const size = 50;
 const sw = 3;
-// const columns = 3;
-// const rows = 5;
-// const w = columns * size;
-// const h = rows * size;
 const r = size / 2;
 const geos = ['circle', 'line'];
-const colors = ['#f49fc4', '#39cbb3', '#f2694b', '#000400', '#1f3ee0'];
 const cMax = 2; // max circles to allow on each SVG
 let circles = 0; // circles generated in currentSVG
 let color;
 
-// let color;
-// let svg;
-// let svgNS;
 // creates each "box" in the SVG
 const createGroup = (...args) => {
-  color = colors[Math.floor(Math.random() * colors.length)];
-  const [x1, x2, y1, y2, col, svg, svgNS] = args;
+  const [x1, x2, y1, y2, col, svg, svgNS, currentColor] = args;
+  color = currentColor;
   const g = document.createElementNS(svgNS, 'g');
   const random = Math.floor(Math.random() * 2);
   const rect = createBox(x1, x2, y1, y2, col, svgNS);
@@ -33,8 +25,6 @@ const createGroup = (...args) => {
   svg.appendChild(g);
   g.appendChild(rect);
   g.appendChild(shape);
-
-  // return svg;
 };
 
 const createBox = (...args) => {

@@ -1,4 +1,4 @@
-export const t = document.getElementById('js-output');
+export const t = document.querySelector('.js-output');
 export const genBtn = document.querySelector('.js-generate');
 export const prev = document.querySelector('.js-prev');
 export const next = document.querySelector('.js-next');

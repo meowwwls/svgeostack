@@ -1,0 +1,26 @@
+// HEADINGS
+
+.h {
+  margin-top: 0;
+  margin-bottom: $mb;
+  // padding-bottom: $ul-h / 2;
+  color: $accent;
+  position: relative;
+  max-width: max-content;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+
+  &::before {
+    @include pse($width: 50%, $height: $ul-h, $top: auto);
+    bottom: -$ul-h;
+    background-color: $prim;
+  }
+
+  &.--l {
+    font-size: 1.6em;
+  }
+
+  &.--m {
+    font-size: 1.4em;
+  }
+}

@@ -1,5 +1,6 @@
 import { setText } from './domhelpers';
-import { dlTxt, statusEl, dlBtn } from './domcache';
+import { dlTxt, statusEl } from './domcache';
+import SVGs from './svgs';
 
 const saveSvg = () => {
   const svg = SVGs.list[SVGs.current];
@@ -32,11 +33,11 @@ const download = () => {
     setText(el, 'downloaded', 'download');
     setText(statusEl, 'download complete');
   } catch (e) {
+    console.log(e);
+
     setText(el, 'download failed', 'download');
     setText(statusEl, 'download failed');
   }
 };
-
-dlBtn.addEventListener('click', download);
 
 export default download;

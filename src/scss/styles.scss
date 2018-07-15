@@ -1,6 +1,8 @@
 @import 'helpers'; // mixins in functions
 @import 'vars';
-@import 'globals'; // headings and page styles
+@import 'globals';
+@import 'headings';
+@import 'siteheader';
 @import 'main'; // main section
 @import 'iconbase';
 @import 'buttons';

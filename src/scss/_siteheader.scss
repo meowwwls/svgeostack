@@ -1,0 +1,17 @@
+.site-header {
+  padding: $mb / 2;
+  margin-bottom: $mb;
+  background-color: $accent2-lt;
+
+  @media screen and (min-width: $bk) {
+    margin-bottom: 0;
+  }
+
+  .h {
+    margin: 0 $bar-w 0 auto;
+
+    &::before {
+      width: 2em;
+    }
+  }
+}

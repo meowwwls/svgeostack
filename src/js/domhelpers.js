@@ -1,3 +1,5 @@
+import { t } from './domcache';
+
 export const setText = (el, msg, end = '') => {
   el.textContent = msg;
 
@@ -6,4 +8,9 @@ export const setText = (el, msg, end = '') => {
       el.textContent = end;
     }, 1000);
   }
+};
+
+export const displaySVG = svg => {
+  t.innerHTML = '';
+  t.appendChild(svg);
 };
