@@ -1,0 +1,21 @@
+$accent: #1f3ee0;
+$accent2: #f49fc4;
+$accent2-lt: desaturate(lighten($accent2, 15%), 40%);
+$prim: #39cbb3;
+$tert: #f2694b;
+$cement: #f3f4f5;
+
+$ul-h: 0.15em;
+$bar-w: 3em;
+$mb: 1.5rem;
+
+$bk: 45em;
+
+// TRANSFORMS
+$btn-a: translateY(2px);
+$prev-d: 15deg;
+$next-d: -15deg;
+
+// TRANSITIONS
+$t-t: transform 200ms ease-in-out;
+$a-t: all 200ms ease-in-out;

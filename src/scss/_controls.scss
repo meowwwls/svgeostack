@@ -1,0 +1,47 @@
+.controls {
+  > * {
+    width: 100%;
+    text-align: center;
+    margin: 0 0.25em;
+  }
+
+  @media screen and (min-width: $bk) {
+    margin: 0 0 $mb;
+  }
+}
+
+.svg__current {
+  @media screen and (min-width: $bk) {
+    display: flex;
+    justify-content: center;
+    margin-bottom: $mb * 1.5;
+  }
+}
+
+.history {
+  > * {
+    transition: $a-t;
+  }
+
+  header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    @media screen and (min-width: $bk) {
+      flex-direction: row;
+      align-items: start;
+    }
+  }
+}
+
+.history__state {
+  margin: 0 auto $mb / 2;
+  max-width: 10em;
+  padding: 0.25em 1em;
+  background-color: $accent2-lt;
+
+  @media screen and (min-width: $bk) {
+    margin: 0 0 0 auto;
+  }
+}

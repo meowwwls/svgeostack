@@ -1,0 +1,12 @@
+{
+  "minifySvg": {
+    "plugins": [
+      {
+        "removeViewBox": false
+      },
+      {
+        "removeDoctype": true
+      }
+    ]
+  }
+}

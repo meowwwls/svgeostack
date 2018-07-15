@@ -1,0 +1,73 @@
+// GENERAL
+::selection {
+  background-color: $accent;
+  color: $cement;
+}
+
+::-moz-selection {
+  background-color: $accent;
+  color: $cement;
+}
+
+* {
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+:root {
+  font-size: calc(1rem + 0.2vw);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  margin: 0;
+  background-color: $cement;
+  font-family: 'Roboto Mono', monospace;
+
+  @media screen and (min-width: $bk) {
+    margin-left: $bar-w * 0.5;
+  }
+
+  &::before {
+    @include pse($left: auto, $height: $bar-w);
+    right: 0;
+
+    background-color: $accent2-lt;
+    z-index: -1;
+
+    @media screen and (min-width: $bk) {
+      height: 100%;
+      width: $bar-w;
+    }
+  }
+}
+
+// HEADINGS
+
+.h {
+  margin-top: 0;
+  margin-bottom: 1.5 + $ul-h;
+  color: $accent;
+  position: relative;
+  max-width: max-content;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+
+  &::before {
+    @include pse($width: 50%, $height: $ul-h, $top: auto);
+    bottom: -$ul-h;
+    background-color: $prim;
+  }
+
+  &.--m {
+    font-size: 1.4em;
+  }
+}

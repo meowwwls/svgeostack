@@ -1,0 +1,164 @@
+button {
+  font-family: inherit;
+  padding: 1em 2em;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+
+  &:active {
+    transform: $btn-a;
+  }
+
+  &:focus {
+    box-shadow: inset 0 0 0 3px $accent2;
+  }
+}
+
+.btn__text {
+  margin-left: 0.5em;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.hist__btn {
+  border: 2px solid $prim;
+  font-size: 1rem;
+  position: relative;
+  margin: 0 0.5em;
+  padding: 0.75em 1.5em;
+  color: $accent;
+  transition: background-color 400ms 300ms ease-in-out;
+
+  @media screen and (min-width: $bk) {
+    margin-bottom: 0;
+  }
+
+  &:focus,
+  &:hover {
+    box-shadow: none;
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+
+  &::before {
+    @include pse();
+    background-color: $accent2-lt;
+    transform: scaleX(0);
+    transition: $t-t;
+  }
+
+  &-prev {
+    margin-bottom: $mb + 0.25;
+    transform-origin: left center;
+    transform: h-btn-t($prev-d);
+
+    &::before {
+      transform-origin: bottom right;
+    }
+
+    .btn__text {
+      transform: h-btn-t($prev-d * -1);
+    }
+
+    &:active {
+      transform: h-btn-t($prev-d) $btn-a;
+    }
+
+    @media screen and (min-width: $bk) {
+      margin-bottom: 0;
+    }
+  }
+
+  &-next {
+    transform-origin: right center;
+    transform: h-btn-t($next-d);
+
+    &:active {
+      transform: h-btn-t($next-d) $btn-a;
+    }
+
+    &::before {
+      transform-origin: bottom left;
+    }
+
+    .btn__text {
+      transform: h-btn-t($next-d * -1);
+    }
+  }
+
+  .btn__text {
+    margin: 0;
+  }
+}
+
+.svg__generate {
+  margin-bottom: $mb;
+  max-width: 15em;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: $accent;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    &::before {
+      transform: rotate(25deg) translate(-10%, -20%) scaleX(1);
+    }
+  }
+
+  @media screen and (min-width: $bk) {
+    width: 100%;
+    font-size: 1.1em;
+  }
+
+  &::before {
+    @include pse($width: $bar-w * 0.75, $height: 150%);
+    background-color: $accent2;
+    transform: rotate(25deg) translate(-10%, -20%) scaleX(0);
+    transition: $t-t;
+    transform-origin: top left;
+  }
+}
+
+.svg__current-btn {
+  background-color: transparent;
+  padding: 0.45em 0.75em;
+  transition: $a-t;
+  position: relative;
+
+  &:hover {
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+
+  &::before {
+    @include pse($height: $ul-h, $top: auto);
+    bottom: $ul-h / 2;
+    background-color: $prim;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: $t-t;
+  }
+
+  .icon {
+    color: $tert;
+    font-size: 1.25em;
+    transition: $a-t;
+    will-change: transform;
+  }
+
+  &:hover,
+  &:focus {
+    .download-top {
+      animation: bounce 1000ms alternate-reverse infinite linear;
+    }
+  }
+}

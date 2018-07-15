@@ -1,0 +1,11 @@
+export const t = document.getElementById('js-output');
+export const genBtn = document.querySelector('.js-generate');
+export const prev = document.querySelector('.js-prev');
+export const next = document.querySelector('.js-next');
+export const dlBtn = document.querySelector('.js-dl');
+export const codeBtn = document.querySelector('.js-copy');
+export const dlTxt = dlBtn.querySelector('.btn__text');
+export const codeTxt = codeBtn.querySelector('.btn__text');
+export const input = document.getElementById('svg-code');
+export const historyTxt = document.querySelector('.js-history');
+export const statusEl = document.querySelector('.js-status');

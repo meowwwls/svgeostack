@@ -1,0 +1,12 @@
+// ANIMATIONS
+@keyframes bounce {
+  0%,
+  50% {
+    transform: translateY(-5%);
+  }
+
+  25%,
+  75% {
+    transform: translateY(5%);
+  }
+}
