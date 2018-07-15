@@ -3,7 +3,6 @@
 .h {
   margin-top: 0;
   margin-bottom: $mb;
-  // padding-bottom: $ul-h / 2;
   color: $accent;
   position: relative;
   max-width: max-content;
@@ -11,7 +10,7 @@
   font-family: 'Poppins', sans-serif;
 
   &::before {
-    @include pse($width: 50%, $height: $ul-h, $top: auto);
+    @include pse($width: 1em, $height: $ul-h, $top: auto);
     bottom: -$ul-h;
     background-color: $prim;
   }
